@@ -98,7 +98,6 @@ export default class CreatePizza extends Component {
           <div className="form-group">
             <label>Description: </label>
             <input  type="text"
-                    required
                     className="form-control"
                     value={this.state.description}
                     onChange={this.onChangeDescription}
