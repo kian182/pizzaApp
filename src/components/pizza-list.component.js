@@ -6,7 +6,6 @@ export default class PizzaList extends Component {
   constructor(props) {
     super(props);
 
-    this.onDeleteAction = this.onDeleteAction.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
 
     this.state = {
@@ -27,7 +26,6 @@ export default class PizzaList extends Component {
           this.setState({
             pizzasList: response.data.map(pizza => pizza)
           })
-          console.log(this.state.pizzasList);
         }
       })
       .catch((error) => {
@@ -48,15 +46,6 @@ export default class PizzaList extends Component {
         console.log(error);
       })
   }
-
-  onDeleteAction(e) {
-    console.log(e);
-  }
-
-  handleClick = (e) => {
-    e.preventDefault();
-    console.log(e.target)
-  };
 
   onSubmit(e) {
     e.preventDefault();
@@ -83,7 +72,7 @@ export default class PizzaList extends Component {
                   <div className="d-flex w-100 justify-content-between">
                     <h5 className="mb-1">{pizza.name}</h5>
                     <div>
-                      <Link to={"/edit/"+pizza._id}>edit</Link>
+                      <Link to={"/edit/pizza/"+pizza._id}>edit</Link>
                     </div>
                   </div>
                   {

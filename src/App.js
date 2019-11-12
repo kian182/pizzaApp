@@ -7,6 +7,8 @@ import PizzaList from "./components/pizza-list.component";
 import EditPizza from "./components/edit-pizza.component";
 import CreatePizza from "./components/create-pizza.component";
 import CreateTopping from "./components/create-topping.component";
+import ListTopping from "./components/topping-list.component";
+import EditTopping from "./components/edit-topping.component";
 
 function App() {
   return (
@@ -16,9 +18,11 @@ function App() {
           <Navbar />
           <br/>
           <Route path="/" exact component={PizzaList} />
-          <Route path="/edit/:id" component={EditPizza} />
-          <Route path="/create" component={CreatePizza} />
-          <Route path="/topping" component={CreateTopping} />
+          <Route path="/edit/pizza/:id" component={EditPizza} />
+          <Route path="/edit/topping/:id" component={EditTopping} />
+          <Route path="/create/pizza" component={CreatePizza} />
+          <Route path="/create/topping" component={CreateTopping} />
+          <Route path="/list/topping" component={ListTopping} />
         </div>
       </Router>
     </div>

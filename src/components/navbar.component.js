@@ -12,11 +12,14 @@ export default class Navbar extends Component {
                         <li className="navbar-item">
                             <Link to="/" className="nav-link">Pizza List</Link>
                         </li>
+                          <li className="navbar-item">
+                            <Link to="/list/topping" className="nav-link">Topping List</Link>
+                          </li>
                         <li className="navbar-item">
-                            <Link to="/create" className="nav-link">Add Pizza</Link>
+                            <Link to="/create/pizza" className="nav-link">Add Pizza</Link>
                         </li>
                         <li className="navbar-item">
-                            <Link to="/topping" className="nav-link">Add Topping</Link>
+                            <Link to="/create/topping" className="nav-link">Add Topping</Link>
                         </li>
                     </ul>
                 </div>
