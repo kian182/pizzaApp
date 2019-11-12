@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 export default class PizzaList extends Component {
   constructor(props) {
     super(props);
 
-    this.onChangeName = this.onChangeName.bind(this);
-    this.onChangeDescription = this.onChangeDescription.bind(this);
+    this.onDeleteAction = this.onDeleteAction.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
 
     this.state = {
@@ -27,7 +27,7 @@ export default class PizzaList extends Component {
           this.setState({
             pizzasList: response.data.map(pizza => pizza)
           })
-          console.log(response.data)
+          console.log(this.state.pizzasList);
         }
       })
       .catch((error) => {
@@ -49,18 +49,14 @@ export default class PizzaList extends Component {
       })
   }
 
-  onChangeName(e) {
-    this.setState({
-      error: this.state.toppingsList.find(x => x === e.target.value),
-      name: e.target.value
-    });
+  onDeleteAction(e) {
+    console.log(e);
   }
 
-  onChangeDescription(e) {
-    this.setState({
-      description: e.target.value
-    })
-  }
+  handleClick = (e) => {
+    e.preventDefault();
+    console.log(e.target)
+  };
 
   onSubmit(e) {
     e.preventDefault();
@@ -69,8 +65,6 @@ export default class PizzaList extends Component {
       name: this.state.name,
       description: this.state.description,
     };
-
-    console.log(pizza);
 
     axios.post('http://localhost:5000/toppings/add', pizza)
       .then(res => console.log(res.data));
@@ -89,7 +83,7 @@ export default class PizzaList extends Component {
                   <div className="d-flex w-100 justify-content-between">
                     <h5 className="mb-1">{pizza.name}</h5>
                     <div>
-                      <small>Edit</small>
+                      <Link to={"/edit/"+pizza._id}>edit</Link>
                     </div>
                   </div>
                   {

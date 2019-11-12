@@ -68,8 +68,6 @@ export default class CreatePizza extends Component {
       toppings: this.state.newToppings,
     };
 
-    console.log(pizza);
-
     axios.post('http://localhost:5000/pizzas/add', pizza)
       .then(res => console.log(res.data));
 

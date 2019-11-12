@@ -56,8 +56,6 @@ export default class CreateTopping extends Component {
       description: this.state.description,
     };
 
-    console.log(pizza);
-
     axios.post('http://localhost:5000/toppings/add', pizza)
       .then(res => console.log(res.data));
 
