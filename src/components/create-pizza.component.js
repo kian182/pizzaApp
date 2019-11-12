@@ -35,11 +35,6 @@ export default class CreatePizza extends Component {
             toppingsModel: response.data[0].name
           })
         }
-        else{
-          this.setState({
-            toppingsModel: 'No toppings available'
-          });
-        }
       })
       .catch((error) => {
         console.log(error);

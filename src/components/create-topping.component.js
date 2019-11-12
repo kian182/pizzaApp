@@ -29,11 +29,6 @@ export default class CreateTopping extends Component {
             toppingsList: response.data.map(topping => topping.name)
           })
         }
-        else{
-          this.setState({
-            toppingsModel: 'No toppings available'
-          });
-        }
       })
       .catch((error) => {
         console.log(error);
