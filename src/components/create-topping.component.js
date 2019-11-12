@@ -87,7 +87,6 @@ export default class CreateTopping extends Component {
               <label className="text-danger">This topping already exists</label>
               : null
             }
-
           </div>
           <div className="form-group">
             <label>Description: </label>
