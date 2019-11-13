@@ -57,7 +57,7 @@ export default class EditTopping extends Component {
       this.props.match.params.id, topping)
       .then(res => console.log(res.data));
 
-    window.location = '/';
+    window.location = '/list/topping';
   }
 
   onDeleteAction = (e) => {
