@@ -59,7 +59,7 @@ export default class CreateTopping extends Component {
     axios.post('http://localhost:5000/toppings/add', pizza)
       .then(res => console.log(res.data));
 
-    window.location = '/';
+    window.location = '/list/topping';
   }
 
   render() {
